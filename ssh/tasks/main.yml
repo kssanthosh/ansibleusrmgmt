@@ -8,7 +8,6 @@
   - name: Setup | authorized key upload
     authorized_key: user={{ item.username }}
       key="{{ lookup('file', 'files/{{ item.username }}.pub') }}"
-    when: '{{ item.use_sudo }} == True'
     with_items: '{{users}}'
 
   - name: Sudoers | update sudoers file and validate
@@ -23,5 +22,5 @@
   - include_vars: deleteusers.yml
 
   - name: Deleting The users
-    user: name={{ item.username }} state=absent remove=yes
+    user: name={{ item.username }} state=absent remove=no
     with_items: '{{users}}'
