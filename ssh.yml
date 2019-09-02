@@ -1,0 +1,8 @@
+# To Run this Playbook Issue the command
+# ansible-playbook ssh.yml 
+---
+- hosts: test
+  become: yes
+  gather_facts: yes
+  roles:
+    - { role: ssh }

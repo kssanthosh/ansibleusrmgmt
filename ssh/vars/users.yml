@@ -1,0 +1,9 @@
+---
+users:
+
+  - username: santhosh
+    use_sudo: yes
+
+  - username: test1
+    use_sudo: no
+
